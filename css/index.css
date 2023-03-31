@@ -1,0 +1,212 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto Mono, sans-serif;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.wrapper {
+    background: #dacece;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.sound-img {
+    margin-bottom: 0;
+    height: 40px;
+    align-self: end;
+
+}
+
+.sound-img img {
+    z-index: 100;
+    cursor: pointer;
+    height: 50px;
+}
+
+
+
+.game {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    background: #fff;
+    border: 3px solid gray;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-wrapper {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.game h1 {
+    font-size: 30px;
+}
+
+.counter-block {
+    width: 200px;
+    margin:20px auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 44px;
+}
+.counter-block span {
+    margin:0 25px;
+}
+
+.count {
+    position: relative;
+    width: 50px;
+    text-align: center;
+}
+
+
+.count::before {
+    content:"";
+    display: block;
+    padding:3px 8px;
+    color: black;
+    font-size: 14px;
+    position: absolute;
+    top:50px;
+}
+.count-user::before {
+    content:"Player";
+    left:-30px;
+    margin-top: 15px;
+    font-size: 25px;
+}
+.count-comp::before {
+    content:"Computer";
+    right:-60px;
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.players {
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.game-buttons-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 15px;
+    min-width: 900px;
+}
+
+.game h3 {
+    text-align: center;
+}
+
+.comp-field {
+    flex-wrap: nowrap;
+}
+
+.comp-field button {
+    cursor: pointer;
+}
+
+.user-field {
+    flex-wrap: nowrap;
+}
+
+.user-field button {
+    cursor: pointer;
+}
+.user-field button:hover {
+
+}
+
+
+.field {
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.rock {
+    background: url(../images/rock.png) center no-repeat;
+        background-size: contain;
+}
+.paper {
+    background: url(../images/paper.png) center no-repeat;
+        background-size: contain;
+}
+.scissors {
+    background: url(../images/scissors.png) center no-repeat;
+        background-size: contain;
+}
+
+.play {
+    font-size: 20px;
+    cursor: pointer;
+    height: 20px;
+    border: none;
+    background-color: aquamarine;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+.field.active {
+    background-color: #2fd32f;
+}
+
+.field.lose {
+    background-color: #de1919;
+}
+
+.comp-field.pick-animation .rock {
+    animation: blink 0.3s 0.1s linear infinite;
+}
+
+.comp-field.pick-animation .paper {
+    animation: blink 0.3s 0.2s linear infinite;
+}
+
+.comp-field.pick-animation .scissors {
+    animation: blink 0.3s 0.3s linear infinite;
+}
+
+.comp-field.blink {
+    animation-play-state: paused;
+}
+
+@keyframes blink {
+    100% {background-color: #2fd32f;}
+}

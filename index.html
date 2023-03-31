@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock-paper-scissors</title>
+    <link
+            rel="stylesheet"
+            href="css/index.css"
+    >
+    <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+    >
+    <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+    >
+    <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+            rel="stylesheet"
+    >
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="game">
+         <span class="sound-img">
+           <button class="sound-on">
+                <img
+                        src="./images/sound-on1921057.svg"
+                        alt="sound-on"
+                >
+           </button>
+            <button class="sound-off"><img
+                    src="./images/mute.svg"
+                    alt="sound-off"
+            ></button>
+         </span>
+        <div class="game-wrapper">
+            <h1>Rock-Paper-Scissors</h1>
+            <div class="counter-block">
+                <div class="count count-user">
+                </div>
+                <span>:</span>
+                <div class="count count-comp">
+                </div>
+            </div>
+            <div class="game-buttons-wrapper">
+                <div class="user-field">
+                    <button
+                            class="field rock"
+                            data-field="r"
+                    ></button>
+                    <button
+                            class="field paper"
+                            data-field="p"
+                    ></button>
+                    <button
+                            class="field scissors"
+                            data-field="s"
+                    ></button>
+                </div>
+                <div class="comp-field">
+                    <button
+                            class="field rock"
+                            data-field="r"
+                    ></button>
+                    <button
+                            class="field paper"
+                            data-field="p"
+                    ></button>
+                    <button
+                            class="field scissors"
+                            data-field="s"
+                    ></button>
+                </div>
+            </div>
+            <h3 class="result">Make your choice</h3>
+        </div>
+    </div>
+    <div>
+        <button class="play">
+            Play Again
+        </button>
+    </div>
+</div>
+
+<script src="/js/index.js"></script>
+<audio
+        src="#"
+        class="sound"
+></audio>
+</body>
+</html>
