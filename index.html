@@ -25,27 +25,33 @@
 <body>
 <div class="wrapper">
     <div class="rules">
-        <button>
+        <button class="rules-btn">
             rules
         </button>
     </div>
     <div class="game">
-        <img class="rules-img"
+        <img class="rules-img hidden"
                 src="./images/rules.png"
                 alt="rules"
         >
-         <span class="sound-img">
+         <div class="sound-img">
            <button class="sound-on">
                 <img
-                        src="./images/sound-on1921057.svg"
+                        src="icons/sound-on.svg"
                         alt="sound-on"
                 >
            </button>
             <button class="sound-off"><img
-                    src="./images/mute.svg"
+                    src="icons/mute.svg"
                     alt="sound-off"
             ></button>
-         </span>
+         </div>
+        <button class="close-btn hidden">
+            <img class="close"
+                 src="./icons/close.svg"
+                 alt="close"
+            >
+        </button>
         <div class="game-wrapper">
             <h1>Rock-Paper-Scissors</h1>
             <div class="counter-block">
@@ -55,6 +61,7 @@
                 <div class="count count-comp">
                 </div>
             </div>
+            <h3 class="result ">Make your choice</h3>
             <div class="game-buttons-wrapper">
                 <div class="user-field">
                     <button
@@ -70,6 +77,7 @@
                             data-field="s"
                     ></button>
                 </div>
+
                 <div class="comp-field">
                     <button
                             class="field rock"
@@ -85,12 +93,12 @@
                     ></button>
                 </div>
             </div>
-            <h3 class="result">Make your choice</h3>
+            <p class="game-info">Please select one option: rock, paper, or scissors.</p>
         </div>
     </div>
     <div>
         <button class="play">
-            Play Again
+            Restart game
         </button>
     </div>
 </div>
