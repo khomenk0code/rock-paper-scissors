@@ -3,24 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock-paper-scissors</title>
-    <link
-            rel="stylesheet"
-            href="css/index.css"
-    >
-    <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com"
-    >
-    <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossorigin
-    >
-    <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-            rel="stylesheet"
-    >
-
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/fav/favicon.ico">
 </head>
 <body>
 <div class="wrapper">
@@ -30,67 +17,36 @@
         </button>
     </div>
     <div class="game">
-        <img class="rules-img hidden"
-                src="./images/rules.png"
-                alt="rules"
-        >
-         <div class="sound-img">
-           <button class="sound-on">
-                <img
-                        src="icons/sound-on.svg"
-                        alt="sound-on"
-                >
-           </button>
-            <button class="sound-off"><img
-                    src="icons/mute.svg"
-                    alt="sound-off"
-            ></button>
-         </div>
+        <img class="rules-img hidden" src="./images/rules.png" alt="rules">
+        <div class="sound-img">
+            <button class="sound-on">
+                <img src="icons/sound-on.svg" alt="sound-on">
+            </button>
+            <button class="sound-off">
+                <img src="icons/mute.svg" alt="sound-off">
+            </button>
+        </div>
         <button class="close-btn hidden">
-            <img class="close"
-                 src="./icons/close.svg"
-                 alt="close"
-            >
+            <img class="close" src="./icons/close.svg" alt="close">
         </button>
         <div class="game-wrapper">
             <h1>Rock-Paper-Scissors</h1>
             <div class="counter-block">
-                <div class="count count-user">
-                </div>
+                <div class="count count-user"></div>
                 <span>:</span>
-                <div class="count count-comp">
-                </div>
+                <div class="count count-comp"></div>
             </div>
             <h3 class="result ">Make your choice</h3>
             <div class="game-buttons-wrapper">
                 <div class="user-field">
-                    <button
-                            class="field rock"
-                            data-field="r"
-                    ></button>
-                    <button
-                            class="field paper"
-                            data-field="p"
-                    ></button>
-                    <button
-                            class="field scissors"
-                            data-field="s"
-                    ></button>
+                    <button class="field rock" data-field="r"></button>
+                    <button class="field paper" data-field="p"></button>
+                    <button class="field scissors" data-field="s"></button>
                 </div>
-
                 <div class="comp-field">
-                    <button
-                            class="field rock"
-                            data-field="r"
-                    ></button>
-                    <button
-                            class="field paper"
-                            data-field="p"
-                    ></button>
-                    <button
-                            class="field scissors"
-                            data-field="s"
-                    ></button>
+                    <button class="field rock" data-field="r"></button>
+                    <button class="field paper" data-field="p"></button>
+                    <button class="field scissors" data-field="s"></button>
                 </div>
             </div>
             <p class="game-info">Please select one option: rock, paper, or scissors.</p>
@@ -104,9 +60,6 @@
 </div>
 
 <script src="/js/index.js"></script>
-<audio
-        src="#"
-        class="sound"
-></audio>
+<audio src="#" class="sound"></audio>
 </body>
 </html>

@@ -13,7 +13,8 @@ window.addEventListener('load', () => {
     const closeBtn = document.querySelector('.close-btn');
     const gameInfo = document.querySelector('.game-info');
     const fields = document.querySelectorAll('.field');
-    let userStep, compStep, compChoiceTimeout, userCountNum = 0, compCountNum = 0, blocked = false, restartInProgress = false;
+    let userStep, compStep, compChoiceTimeout, userCountNum = 0, compCountNum = 0, blocked = false,
+        restartInProgress = false;
 
     countUser.innerText = '0';
     countComp.innerText = '0';
@@ -31,27 +32,19 @@ window.addEventListener('load', () => {
         closeBtn.classList.remove('block');
     })
 
-    unmuteBtn.addEventListener('click', () => {
-        sound.muted = true;
-        updateSoundButtons();
-    });
-
-    muteBtn.addEventListener('click', () => {
-        sound.muted = false;
-        updateSoundButtons();
-    });
-
-
-
     const updateSoundButtons = () => {
-        if (!sound.muted) {
-            muteBtn.classList.add('hidden');
-            unmuteBtn.classList.remove('hidden');
-        } else {
-            muteBtn.classList.remove('hidden');
-            unmuteBtn.classList.add('hidden');
-        }
+        muteBtn.classList.toggle('hidden', sound.muted);
+        unmuteBtn.classList.toggle('hidden', !sound.muted);
     };
+
+    const toggleSound = () => {
+        sound.muted = !sound.muted;
+        updateSoundButtons();
+    };
+
+    unmuteBtn.addEventListener('click', () => toggleSound());
+    muteBtn.addEventListener('click', () => toggleSound());
+
     updateSoundButtons();
 
 
@@ -135,8 +128,6 @@ window.addEventListener('load', () => {
         compField.classList.remove('pick-animation');
         restartInProgress = false;
     };
-
-
 
 
     play.addEventListener('click', restartGame);

@@ -42,11 +42,11 @@ button {
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    transition: background-color 1s ease-in-out;
+    transition: background-color .7s ease-in-out;
 }
 .rules button:hover {
     background-color: orange;
-    transition: background-color 1s ease-in-out;
+    transition: background-color .7s ease-in-out;
 }
 
 .close-btn {
@@ -278,12 +278,12 @@ button {
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    transition: background-color 1s ease-in-out;
+    transition: background-color .7s ease-in-out;
 }
 
 .play:hover {
     background-color: mediumaquamarine;
-    transition: background-color 1s ease-in-out;
+    transition: background-color .7s ease-in-out;
 }
 
 .hidden {
