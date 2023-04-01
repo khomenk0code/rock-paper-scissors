@@ -17,13 +17,11 @@ window.addEventListener('load', () => {
 
     countUser.innerText = '0';
     countComp.innerText = '0';
-
+    sound.volume = 0.1;
 
     rulesBtn.addEventListener('click', () => {
-        rules.classList.remove('hidden')
-        rules.classList.add('block');
-        closeBtn.classList.remove('hidden')
-        closeBtn.classList.add('block');
+        rules.classList.toggle('hidden');
+        closeBtn.classList.toggle('hidden');
     })
 
     closeBtn.addEventListener('click', () => {
