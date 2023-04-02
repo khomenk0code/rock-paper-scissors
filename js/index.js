@@ -13,11 +13,26 @@ window.addEventListener('load', () => {
     const closeBtn = document.querySelector('.close-btn');
     const gameInfo = document.querySelector('.game-info');
     const fields = document.querySelectorAll('.field');
-    let userStep, compStep, compChoiceTimeout, userCountNum = 0, compCountNum = 0, blocked = false,
-        restartInProgress = false;
+    let userStep, compStep, compChoiceTimeout,
+        userCountNum = 0, compCountNum = 0, blocked = false, restartInProgress = false;
 
-    countUser.innerText = '0';
-    countComp.innerText = '0';
+
+    const userCount = localStorage.getItem('countUser');
+    if (userCount) {
+        userCountNum = parseInt(userCount);
+        countUser.innerText = userCountNum;
+    } else {
+        countUser.innerText = '0';
+    }
+
+    const compCount = localStorage.getItem('compCount');
+    if (compCount) {
+        compCountNum = parseInt(compCount);
+        countComp.innerText = compCountNum;
+    } else {
+        countComp.innerText = '0';
+    }
+
     sound.volume = 0.1;
 
     rulesBtn.addEventListener('click', () => {
@@ -32,18 +47,23 @@ window.addEventListener('load', () => {
         closeBtn.classList.remove('block');
     })
 
+
+
     const updateSoundButtons = () => {
-        muteBtn.classList.toggle('hidden', sound.muted);
-        unmuteBtn.classList.toggle('hidden', !sound.muted);
+        muteBtn.classList.toggle('hidden', !sound.muted);
+        unmuteBtn.classList.toggle('hidden', sound.muted);
     };
 
     const toggleSound = () => {
         sound.muted = !sound.muted;
+        localStorage.setItem('muted', sound.muted.toString());
         updateSoundButtons();
     };
 
     unmuteBtn.addEventListener('click', () => toggleSound());
     muteBtn.addEventListener('click', () => toggleSound());
+
+    sound.muted = localStorage.getItem('muted') === 'true';
 
     updateSoundButtons();
 
@@ -59,6 +79,7 @@ window.addEventListener('load', () => {
             gameInfo.classList.remove('block')
             gameInfo.classList.add('hidden')
             compChoice();
+            blocked = true;
         }
     };
 
@@ -98,6 +119,7 @@ window.addEventListener('load', () => {
                 sound.play();
                 userCountNum++;
                 countUser.innerText = userCountNum;
+                localStorage.setItem('countUser', userCountNum);
                 compField.querySelector(`[data-field = ${compStep}]`).classList.add('lose');
                 break;
 
@@ -109,6 +131,7 @@ window.addEventListener('load', () => {
                 sound.play();
                 compCountNum++;
                 countComp.innerText = compCountNum;
+                localStorage.setItem('compCount', compCountNum);
                 userField.querySelector(`[data-field = ${userStep}]`).classList.add('lose');
                 break;
         }
@@ -127,6 +150,8 @@ window.addEventListener('load', () => {
         clearTimeout(compChoiceTimeout);
         compField.classList.remove('pick-animation');
         restartInProgress = false;
+        localStorage.removeItem('compCount');
+        localStorage.removeItem('countUser');
     };
 
 
